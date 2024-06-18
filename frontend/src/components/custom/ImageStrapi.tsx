@@ -1,4 +1,4 @@
-import { GetStrapiMedia } from '@/lib/utils';
+import { GetStrapiMedia } from '@/functions/GetStrapiMedia';
 import { IImageStrapiProps } from '@/types/components/custom/ImageStrapi';
 import Image from 'next/image';
 

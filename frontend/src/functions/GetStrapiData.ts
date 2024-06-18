@@ -1,4 +1,5 @@
-import { FlattenAttributes, GetStrapiURL } from '@/lib/utils';
+import { FlattenAttributes } from '@/lib/utils';
+import { GetStrapiURL } from './GetStrapiURL';
 
 export async function GetStrapiData(query: string, path: string) {
   const baseURL = GetStrapiURL();
