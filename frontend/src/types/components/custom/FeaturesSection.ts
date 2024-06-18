@@ -1,13 +1,13 @@
 import { icons } from './Icon';
 
-interface IFeatureProps {
+export interface IFeatureProps {
   id: number;
   heading: string;
   subHeading: string;
   icon: keyof typeof icons;
 }
 
-export interface IFeatureSectionProps {
+export interface IFeaturesSectionProps {
   data: {
     id: number;
     __component: string;

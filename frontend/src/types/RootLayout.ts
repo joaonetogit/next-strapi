@@ -1,3 +1,3 @@
-export interface IRootLayout {
-  children: React.ReactNode;
-}
+import { IChildren } from './base';
+
+export interface IRootLayout extends IChildren {}

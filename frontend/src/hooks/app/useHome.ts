@@ -22,5 +22,8 @@ const HomePageQuery = qs.stringify({
 export default async function useHome() {
   const strapiData = await GetStrapiData(HomePageQuery, '/api/home-page');
   const { blocks } = strapiData;
-  return { blocks };
+  const heroData = blocks[0];
+  const featuresData = blocks[1];
+
+  return { heroData, featuresData };
 }
