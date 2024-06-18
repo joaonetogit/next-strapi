@@ -11,6 +11,9 @@ const HomePageQuery = qs.stringify({
         link: {
           populate: true,
         },
+        feature: {
+          populate: true,
+        },
       },
     },
   },

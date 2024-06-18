@@ -2,7 +2,7 @@ import { IHeroSectionProps } from '@/types/components/custom/HeroSection';
 import Link from 'next/link';
 import { ImageStrapi } from './ImageStrapi';
 
-export function HeroSection({ data }: Readonly<IHeroSectionProps>) {
+export default function HeroSection({ data }: Readonly<IHeroSectionProps>) {
   const { heading, subHeading, image, link } = data;
 
   return (
