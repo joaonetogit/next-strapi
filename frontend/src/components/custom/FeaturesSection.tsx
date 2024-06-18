@@ -1,6 +1,7 @@
 import { IFeatureSectionProps } from '@/types/components/custom/FeatureSection';
+import IconRenderer from './Icon';
 
-export default function FeatureSection({ data }: { readonly data: IFeatureSectionProps }) {
+export default function FeatureSection({ data }: Readonly<IFeatureSectionProps>) {
   const { feature } = data;
 
   return (
@@ -9,7 +10,9 @@ export default function FeatureSection({ data }: { readonly data: IFeatureSectio
         <div className="grid gap-8 md:grid-cols-3">
           {feature.map((feature) => (
             <div key={feature.id} className="flex flex-col items-center text-center">
-              {feature.icon}
+              <div className="mb-4">
+                <IconRenderer type={feature.icon} />
+              </div>
               <h2 className="mb-4 text-2xl font-bold">{feature.heading}</h2>
               <p className="text-gray-500">{feature.subHeading}</p>
             </div>
