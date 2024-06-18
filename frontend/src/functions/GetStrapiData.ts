@@ -1,9 +1,15 @@
-export async function GetStrapiData(path: string) {
-  const baseURL = 'http://localhost:1337';
+import { FlattenAttributes, GetStrapiURL } from '@/lib/utils';
+
+export async function GetStrapiData(query: string, path: string) {
+  const baseURL = GetStrapiURL();
+  const url = new URL(path, baseURL);
+  url.search = query;
+
   try {
-    const response = await fetch(baseURL + path);
+    const response = await fetch(url.href, { cache: 'no-store' });
     const data = await response.json();
-    return data;
+    const flattenedData = FlattenAttributes(data);
+    return flattenedData;
   } catch (error) {
     console.error(error);
     return null;

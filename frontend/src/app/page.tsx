@@ -1,22 +1,14 @@
-import { Button } from '@/components/ui/Button';
+import { HeroSection } from '@/components/custom/HeroSection';
 import useHome from '@/hooks/app/useHome';
 
 export default async function Home() {
-  const { Title, Description } = await useHome();
+  const { blocks } = await useHome();
+  const heroData = blocks[0];
 
   return (
     <main>
-      <div className="container">
-        <div className="flex h-screen flex-col items-center justify-center gap-4">
-          <h1>{Title}</h1>
-          <p>{Description}</p>
-          <div>
-            <Button>
-              <span>Learn more</span>
-            </Button>
-          </div>
-        </div>
-      </div>
+      <HeroSection data={heroData} />
+      <div className="container"></div>
     </main>
   );
 }
