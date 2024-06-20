@@ -1,5 +1,3 @@
-import { IFeatureProps } from './FeaturesSection';
+import { IChildren } from '@/types/base';
 
-export interface IFeaturesSectionListProps {
-  feature: IFeatureProps[];
-}
+export interface IFeaturesSectionListProps extends IChildren {}

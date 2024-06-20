@@ -1,5 +1,6 @@
 import { IFeaturesSectionProps } from '@/types/components/custom/FeaturesSection';
 import Container from '../Container';
+import FeaturesSectionItem from './FeaturesSectionItem';
 import FeaturesSectionList from './FeaturesSectionList';
 
 export default function FeatureSection({ data }: Readonly<IFeaturesSectionProps>) {
@@ -8,9 +9,11 @@ export default function FeatureSection({ data }: Readonly<IFeaturesSectionProps>
   return (
     <section className="py-6 lg:py-24">
       <Container>
-        <div className="grid gap-8 md:grid-cols-3">
-          <FeaturesSectionList feature={feature} />
-        </div>
+        <FeaturesSectionList>
+          {feature.map((feature) => (
+            <FeaturesSectionItem key={feature.id} feature={feature} />
+          ))}
+        </FeaturesSectionList>
       </Container>
     </section>
   );
